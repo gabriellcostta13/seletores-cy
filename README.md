@@ -1,46 +1,22 @@
-# Seletores alternativos com Cypress
-### Aula extra para os alunos de Qualidade de software da EBAC 
+# Seletores CSS/Cypress
 
-Ebac shop: http://lojaebac.ebaconline.art.br/
+Exercício de estudo do curso de QA da EBAC, focado em praticar diferentes formas de selecionar elementos com Cypress: classe, id, atributo customizado (`data-test`) e hierarquia entre elementos (pai/filho/irmão).
 
-## Clonando e executando em sua máquina
+## Como rodar
 
-### Pré-requisito:
-
--Node.js - Você encontra em: https://nodejs.org/en/
-
--Visual Studio Code ou qualquer editor de texto - você encontra em: https://code.visualstudio.com/download
-
--Git: você encontra em: https://git-scm.com/downloads
-
-
-Via terminal, rode os seguintes comandos:
-```  
-git clone https://github.com/EBAC-QE/seletores-cy.git
-```
-```
+\`\`\`bash
+git clone https://github.com/gabriellcostta13/seletores-cy.git
 cd seletores-cy
-```
+npm install
+npx cypress open
+\`\`\`
 
-#### Para instalar as dependencias:
-```
-npm install 
-```
+Selecione um navegador (recomendado: Electron) e rode os testes.
 
-#### Para executar via Dashboard:
-```
-npx cypress open 
-```
-Após abrir o dashboard, selecione um dos navegadores (De preferencia Electron) e siga com as execuções. 
+## Tecnologias
 
+- [Cypress](https://cypress.io/)
 
-### Bibliotecas de apoio:
--Cypress: Framework de automação: https://cypress.io/
+---
 
-### Bom exercício ;) 
-Fábio & José Ernesto
-Qualidade de software
-
-
-
-
+Baseado em material da EBAC (Fábio & José Ernesto).
