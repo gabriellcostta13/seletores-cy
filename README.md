@@ -37,3 +37,29 @@ seletores-cy/
 │       └── seletores.cy.js
 ├── seletores.html
 └── package.json
+```
+
+## Como executar
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Para abrir a interface do Cypress:
+
+```bash
+npx cypress open
+```
+
+Para executar os testes em modo headless:
+
+```bash
+npx cypress run
+```
+
+## Autor
+
+Gabriel Costa  
+Quality Assurance (QA).
