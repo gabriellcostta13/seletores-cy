@@ -1,49 +1,39 @@
-# Seletores CSS/Cypress — Exercícios de Automação
+# Seletores CSS com Cypress
 
-Repositório de estudo focado em praticar **estratégias de seleção de elementos** com Cypress: classes, IDs, atributos customizados (`data-test`), hierarquia entre elementos (pai/filho/irmão) e boas práticas de seletores resilientes.
+Projeto de estudo desenvolvido para praticar automação de testes end-to-end com Cypress.
 
-Exercício desenvolvido durante o curso de **Qualidade de Software (QA)** da EBAC, módulo de Automação de UI com Cypress.
+A aplicação utiliza uma página HTML simples com elementos de uma família e um formulário de avaliação. O foco principal é explorar diferentes formas de localizar elementos na interface durante os testes.
 
-## Sobre o projeto
+## Objetivo
 
-O arquivo `seletores.html` simula uma estrutura de página com diferentes formas de acessar os mesmos elementos (classe, id, atributo, posição na hierarquia), permitindo comparar na prática qual estratégia de seletor é mais adequada em cada cenário — e por quê.
+Praticar a criação de testes automatizados utilizando seletores CSS, textos, atributos, IDs e relações entre elementos no DOM.
 
-Os testes em `cypress/e2e/seletores.cy.js` cobrem casos como:
-- Seleção por texto contido (`cy.contains`)
-- Seleção por classe vs. atributo customizado (`data-test`)
-- Verificação de atributos (`have.attr`) vs. classes (`have.class`)
-- Navegação entre elementos irmãos (`+`, `next`, `prev`)
-- Seleção por posição (`.eq()`)
-- Interação com formulários (`select`, `click`) e validação de mensagens de feedback
+## Tecnologias utilizadas
 
-## Clonando e executando localmente
+- HTML5
+- CSS3
+- JavaScript
+- Cypress
 
-### Pré-requisitos
+## Conceitos praticados
 
-- [Node.js](https://nodejs.org/en/)
-- [Visual Studio Code](https://code.visualstudio.com/download) (ou outro editor de sua preferência)
-- [Git](https://git-scm.com/downloads)
+Os testes presentes no projeto utilizam:
 
-### Passos
+- `cy.contains()` para localizar elementos por texto;
+- `cy.get()` para localizar elementos por classe, ID e atributo;
+- `find()` para buscar elementos filhos;
+- Seletores de irmãos adjacentes (`+`);
+- `next()` e `prev()` para navegar entre elementos irmãos;
+- `eq()` para selecionar elementos pela posição;
+- Seletores por atributos, como `data-test` e `name`;
+- Interação com `select`, botão de envio e mensagem de feedback.
 
-\`\`\`bash
-git clone https://github.com/gabriellcostta13/seletores-cy.git
-cd seletores-cy
-npm install
-\`\`\`
+## Estrutura do projeto
 
-Para executar via Dashboard:
-
-\`\`\`bash
-npx cypress open
-\`\`\`
-
-Selecione um navegador (recomendado: Electron) e rode os testes.
-
-## Tecnologias
-
-- [Cypress](https://cypress.io/) — Framework de automação de testes E2E
-
----
-
-Exercício baseado em material da EBAC (Fábio & José Ernesto), adaptado e expandido como parte dos meus estudos em QA.
+```text
+seletores-cy/
+├── cypress/
+│   └── e2e/
+│       └── seletores.cy.js
+├── seletores.html
+└── package.json

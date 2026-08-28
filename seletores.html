@@ -1,230 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-    <title> Exemplo de HTML</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de Seletores CSS</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            background: #f2f4f7;
-            color: #2d3436;
-            padding: 40px 20px;
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            color: #2d2d2d;
+            background-color: #f4f4f4;
         }
 
         h1 {
-            color: #2d3436;
-            font-weight: 700;
-            margin-bottom: 40px;
+            max-width: 600px;
+            margin: 0 auto 8px;
+            color: #333;
+            font-size: 28px;
         }
 
-        .pai {
-            position: relative;
-            background: #ffffff;
-            border-radius: 14px;
+        .introducao {
+            max-width: 600px;
+            margin: 0 auto 28px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .pai,
+        .pai-tio-1,
+        .pai-tio-2 {
+            max-width: 600px;
+            margin: 0 auto 20px;
             padding: 24px;
-            margin-bottom: 50px;
-            max-width: 400px;
-            width: 100%;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border-top: 6px solid #6c5ce7;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .pai::before,
+        .pai-tio-1::before,
+        .pai-tio-2::before {
+            display: block;
+            margin-bottom: 18px;
+            color: #555;
+            font-size: 14px;
+            font-weight: bold;
         }
 
         .pai::before {
-            content: "🪪 CRACHÁ — Núcleo Familiar";
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #6c5ce7;
-            text-transform: uppercase;
-            margin-bottom: 16px;
+            content: "Escolha um familiar para participar da conversa:";
+        }
+
+        .pai-tio-1::before {
+            content: "Outros participantes:";
+        }
+
+        .pai-tio-2::before {
+            content: "Deixe sua avaliação:";
         }
 
         .pai ul {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 14px 0;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
+            padding: 0;
+            margin: 0 0 18px;
+            list-style: none;
         }
 
         .pai li {
-            background: #f0eefe;
-            border-radius: 8px;
-            padding: 10px 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            padding: 13px 15px;
+            border: 1px solid #d7d7d7;
+            border-radius: 6px;
+            background: #fafafa;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .pai li::before {
-            content: "👤";
+        .pai li:hover,
+        .pai li:focus {
+            outline: none;
+            border-color: #5b4db8;
+            background: #f0eeff;
+        }
+
+        .pai li.selecionado {
+            border-color: #5b4db8;
+            color: #fff;
+            background: #5b4db8;
         }
 
         .item-especial {
-            background: #6c5ce7 !important;
-            color: #fff !important;
             font-weight: bold;
         }
 
         .filho-4 {
-            background: #f0eefe;
-            border-radius: 8px;
-            padding: 10px 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .filho-4::before {
-            content: "📎";
+            padding: 12px 15px;
+            border-left: 4px solid #5b4db8;
+            background: #f0eeff;
         }
 
         .pai-tio-1 {
-            position: relative;
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 24px;
-            margin-bottom: 50px;
             display: flex;
-            gap: 16px;
-            justify-content: center;
             flex-wrap: wrap;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border-top: 6px solid #00b894;
+            gap: 10px;
         }
 
         .pai-tio-1::before {
-            content: "🪪 CRACHÁ — Irmãos";
-            position: absolute;
-            top: 24px;
-            left: 24px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #00b894;
-            text-transform: uppercase;
+            width: 100%;
         }
 
         .irmao {
-            background: #e5faf3;
-            border-radius: 30px;
-            padding: 10px 20px;
-            font-weight: 600;
-            margin-top: 26px;
+            padding: 10px 14px;
+            border-radius: 20px;
+            background: #e9f6ee;
+            color: #23633a;
         }
 
-        .irmao::before {
-            content: "🙋 ";
-        }
-
-        .pai-tio-2 {
-            position: relative;
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 24px;
-            max-width: 380px;
-            width: 100%;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border-top: 6px solid #fdcb6e;
-        }
-
-        .pai-tio-2::before {
-            content: "🪪 CRACHÁ — Pesquisa";
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #e17055;
-            text-transform: uppercase;
-            margin-bottom: 16px;
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
+            width: 100%;
+            font-weight: bold;
         }
 
-        select, input[type="submit"] {
-            font-family: inherit;
-            font-size: 14px;
+        select,
+        input[type="submit"] {
+            min-height: 40px;
             padding: 8px 12px;
-            border-radius: 8px;
-            border: 1px solid #dfe4ea;
-            background: #f8f9fb;
-            cursor: pointer;
+            border-radius: 5px;
+            font: inherit;
+        }
+
+        select {
+            flex: 1;
+            min-width: 180px;
+            border: 1px solid #ccc;
+            background: #fff;
         }
 
         input[type="submit"] {
-            background: #fdcb6e;
-            color: #2d3436;
-            font-weight: 700;
-            border: none;
-            margin-left: 10px;
-            transition: background 0.2s ease;
+            border: 0;
+            color: #fff;
+            background: #5b4db8;
+            cursor: pointer;
+            font-weight: bold;
         }
 
         input[type="submit"]:hover {
-            background: #e17055;
-            color: #fff;
+            background: #453794;
         }
 
         #mensagemFeedback {
-            background: #e5faf3;
-            border-left: 4px solid #00b894;
-            border-radius: 8px;
-            padding: 14px 24px;
-            margin-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 14px 16px;
+            border: 1px solid #b8dfc5;
+            border-radius: 6px;
+            color: #23633a;
+            background: #e9f6ee;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 28px 16px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            select,
+            input[type="submit"] {
+                width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>Título: Exemplo de seletores</h1>
+    <h1>Exercício de Seletores CSS</h1>
+
+    <p class="introducao">
+        Selecione um familiar e registre sua opinião sobre os encontros de família.
+    </p>
 
     <div class="pai" data-test="div-pai">
         <ul>
-            <li class="filho-1">Vovó Helena</li>
-            <li class="filho-2 item-especial">Tio Marcos</li>
-            <li class="filho-3">Prima Beatriz</li>
+            <li class="filho-1" tabindex="0" role="button">Vovó Helena</li>
+            <li class="filho-2 item-especial" tabindex="0" role="button">Tio Marcos</li>
+            <li class="filho-3" tabindex="0" role="button">Prima Beatriz</li>
         </ul>
+
         <div class="filho-4" id="id-filho">
             Sobrenome: Andrade
         </div>
-        <br><br>
     </div>
 
     <div class="pai-tio-1" name="nome-do-atributo">
-        <span class="irmao" id="irmao-1"> Irmã Camila </span>
-        <span class="irmao" id="irmao-2"> Irmão Rafael </span>
-        <br><br>
+        <span class="irmao" id="irmao-1">Irmã Camila</span>
+        <span class="irmao" id="irmao-2">Irmão Rafael</span>
     </div>
 
     <div class="pai-tio-2">
         <form id="formularioAvaliacao">
-            <br>
-            <label>O quanto você sente saudades dos encontros de família?</label>
-            <select name="opcao">
+            <label for="opcao">Quanto você sente saudade dos encontros de família?</label>
+
+            <select name="opcao" id="opcao">
                 <option class="filho-1" value="none">Selecione</option>
                 <option class="filho-2" value="muito">Muito</option>
                 <option class="filho-3" value="medio">Médio</option>
                 <option class="filho-4" value="pouco">Pouco</option>
             </select>
-            <input id="id-enviar" type="submit" value="Enviar">
+
+            <input id="id-enviar" type="submit" value="Enviar resposta">
         </form>
     </div>
 
     <p id="mensagemFeedback" style="display: none;">Obrigado por compartilhar conosco!</p>
+
     <script>
+        const familiares = document.querySelectorAll(".pai li");
+
+        familiares.forEach(function (familiar) {
+            familiar.addEventListener("click", function () {
+                familiares.forEach(function (item) {
+                    item.classList.remove("selecionado");
+                });
+
+                familiar.classList.add("selecionado");
+            });
+
+            familiar.addEventListener("keydown", function (event) {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    familiar.click();
+                }
+            });
+        });
+
         document.getElementById("formularioAvaliacao").addEventListener("submit", function (event) {
-            event.preventDefault(); // Impede o envio real do formulário
-            document.getElementById("mensagemFeedback").style.display = "block"; // Mostra a mensagem de feedback
+            event.preventDefault();
+            document.getElementById("mensagemFeedback").style.display = "block";
         });
     </script>
 </body>
