@@ -3,6 +3,186 @@
 
 <head>
     <title> Exemplo de HTML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #f2f4f7;
+            color: #2d3436;
+            padding: 40px 20px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2d3436;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        .pai {
+            position: relative;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 50px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid #6c5ce7;
+        }
+
+        .pai::before {
+            content: "🪪 CRACHÁ — Núcleo Familiar";
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #6c5ce7;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .pai ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .pai li {
+            background: #f0eefe;
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pai li::before {
+            content: "👤";
+        }
+
+        .item-especial {
+            background: #6c5ce7 !important;
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        .filho-4 {
+            background: #f0eefe;
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filho-4::before {
+            content: "📎";
+        }
+
+        .pai-tio-1 {
+            position: relative;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 50px;
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid #00b894;
+        }
+
+        .pai-tio-1::before {
+            content: "🪪 CRACHÁ — Irmãos";
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #00b894;
+            text-transform: uppercase;
+        }
+
+        .irmao {
+            background: #e5faf3;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-weight: 600;
+            margin-top: 26px;
+        }
+
+        .irmao::before {
+            content: "🙋 ";
+        }
+
+        .pai-tio-2 {
+            position: relative;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px;
+            max-width: 380px;
+            width: 100%;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid #fdcb6e;
+        }
+
+        .pai-tio-2::before {
+            content: "🪪 CRACHÁ — Pesquisa";
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #e17055;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        select, input[type="submit"] {
+            font-family: inherit;
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #dfe4ea;
+            background: #f8f9fb;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            background: #fdcb6e;
+            color: #2d3436;
+            font-weight: 700;
+            border: none;
+            margin-left: 10px;
+            transition: background 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #e17055;
+            color: #fff;
+        }
+
+        #mensagemFeedback {
+            background: #e5faf3;
+            border-left: 4px solid #00b894;
+            border-radius: 8px;
+            padding: 14px 24px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -10,26 +190,26 @@
 
     <div class="pai" data-test="div-pai">
         <ul>
-            <li class="filho-1">Item 1</li>
-            <li class="filho-2 item-especial">Item 2</li>
-            <li class="filho-3">Item 3</li>
+            <li class="filho-1">Vovó Helena</li>
+            <li class="filho-2 item-especial">Tio Marcos</li>
+            <li class="filho-3">Prima Beatriz</li>
         </ul>
         <div class="filho-4" id="id-filho">
-            Item solto
+            Sobrenome: Andrade
         </div>
         <br><br>
     </div>
 
     <div class="pai-tio-1" name="nome-do-atributo">
-        <span class="irmao" id="irmao-1"> Irmão 1 </span>
-        <span class="irmao" id="irmao-2"> Irmão 2 </span>
+        <span class="irmao" id="irmao-1"> Irmã Camila </span>
+        <span class="irmao" id="irmao-2"> Irmão Rafael </span>
         <br><br>
     </div>
 
     <div class="pai-tio-2">
         <form id="formularioAvaliacao">
             <br>
-            <label>O quanto você gosta de Sorvete?</label>
+            <label>O quanto você sente saudades dos encontros de família?</label>
             <select name="opcao">
                 <option class="filho-1" value="none">Selecione</option>
                 <option class="filho-2" value="muito">Muito</option>

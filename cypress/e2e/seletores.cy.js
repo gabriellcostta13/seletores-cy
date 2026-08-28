@@ -7,7 +7,7 @@ describe('Seletores avançados com cypress', () => {
   });
 
   it('Seleciona elementos que contêm um Texto específico', () => {
-    cy.contains('Item 3').should ('have.attr', 'class', 'filho-3')
+    cy.contains('Prima Beatriz').should ('have.attr', 'class', 'filho-3')
    
   });
     
@@ -20,27 +20,27 @@ describe('Seletores avançados com cypress', () => {
    })
 
   it('Seleciona um elemento filho dentro do elemento com a classe pai', () => {
-     cy.get('.pai').find('.filho-2').should('contain' , 'Item 2')
+     cy.get('.pai').find('.filho-2').should('contain' , 'Tio Marcos')
   });
 
   it('Seleciona o segundo elemento <span> com a classe irmao', () => {
-    cy.get('.irmao + .irmao').should('contain', 'Irmão 2')
+    cy.get('.irmao + .irmao').should('contain', 'Irmão Rafael')
   });
 
   it('Seleciona o próximo elemento irmão', () => {
-    cy.get('#irmao-1').next().should('contain', 'Irmão 2')
+    cy.get('#irmao-1').next().should('contain', 'Irmão Rafael')
   });
 
   it('Seleciona o elemento irmão anterior', () => {
-    cy.get('#irmao-2').prev().should('contain', 'Irmão 1')
+    cy.get('#irmao-2').prev().should('contain', 'Irmã Camila')
   });
 
   it('Seleciona o irmão da div anterior', () => {
-      cy.get('[name="nome-do-atributo"]').prev().should('contain', 'Item 1')
+      cy.get('[name="nome-do-atributo"]').prev().should('contain', 'Vovó Helena')
   });
 
   it('Seleciona o terceiro elemento <li> encontrado', () => {
-    cy.get('li').eq(0).should('contain', 'Item 1')
+    cy.get('li').eq(0).should('contain', 'Vovó Helena')
   });
 
   it('Seleciona o elemento com o atributo data-test', () => {
@@ -51,7 +51,7 @@ describe('Seletores avançados com cypress', () => {
     cy.get('.filho-4').parent('[data-test="div-pai"]').should('exist')
   });
 
-it.only('Seleciona o elemento com um valor em um select', () => {
+it('Seleciona o elemento com um valor em um select', () => {
   cy.get('[name="opcao"]').select('Muito')
   cy.get('#id-enviar').click()
   cy.get('#mensagemFeedback').should('have.text', 'Obrigado por compartilhar conosco!')
